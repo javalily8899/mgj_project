@@ -8,6 +8,7 @@ import enroll from '@/components/enroll'
 import logon from '@/components/logon'
 import shopcar from '@/components/shopcar'
 import orderpage from '@/components/orderpage'
+import logon3 from '@/components/logon3'
 Vue.use(Router)
 
 export default new Router({
@@ -46,6 +47,11 @@ export default new Router({
       path: '/shopcar',
       name: 'shopcar',
       component: shopcar
+    },
+    {
+      path: '/logon3',
+      name: 'logon3',
+      component: logon3
     }
 
 

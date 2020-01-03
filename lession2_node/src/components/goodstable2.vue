@@ -127,7 +127,8 @@
         </div>
       </div>
       <div class="table_2_denglu" v-if="(!showlog)">
-        <button class="btn btn-success" @click="toenroll_page()">登录</button>
+        <button class="btn btn-success" @click="toenroll_page()">用户登录</button>
+        <button class="btn btn-info" @click="topos_page()">商户登录</button>
       </div>
       <div v-if="showlog" class="hellopage">
         欢迎:{{user.logname}}
@@ -199,8 +200,13 @@
         }
 
       },
+      /* 跳转到用户登录页面*/
       toenroll_page(){
         this.$router.push("logon")
+      },
+      /* 跳转到商户登录页面*/
+      topos_page(){
+        this.$router.push("logon3")
       },
 
       /* 键盘上下选中*/
