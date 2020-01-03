@@ -22,27 +22,7 @@ public class PosController {
 	
 	@Autowired
 	PosService posService;
-	/**
-	 * 
-	 * @param logname
-	 * @param password
-	 * @param keycold
-	 * @param session
-	 * @return
-	 * @throws 0:验证码错误 1：注册成功
-	 */
-	@RequestMapping("/doinsertpos")
-	public Object doinsertpos(String logname,String password,String keycold,HttpSession session) throws UsernameExist{
-		Map mp =new HashMap();
-		String code=(String) session.getAttribute("rightCode");
-		if(!keycold.equalsIgnoreCase(code)){
-			mp.put("msg", 0);
-			return mp;
-		}
-		posService.doPosRegiste(logname, password);
-		mp.put("msg", 1);
-		return mp;
-	}
+	
 	
 	@RequestMapping("/posonline")
 	public Object userIsOnline(HttpSession session){
@@ -51,9 +31,11 @@ public class PosController {
 		//System.out.println(user);
 		return pos;
 	}
-
+	
+	
+	
 	@RequestMapping("/poslogin")
-	/**登录方法
+	/**
 	 * 
 	 * @param logname
 	 * @param password

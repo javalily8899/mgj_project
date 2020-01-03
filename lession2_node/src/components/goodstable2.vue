@@ -26,7 +26,7 @@
     width: 552px;
     height: 48px;
     display: inline-block;
-    margin-left: 120px;
+    margin-left: 80px;
     margin-top: 20px;
     border-radius: 9px;
     background: gainsboro;
@@ -82,7 +82,7 @@
 .table_2_denglu{
   float: left;
   height: 40px;
-  margin-left: 15px;
+  margin-left:5px;
   margin-top: 24px;
 }
 .hellopage{
@@ -206,7 +206,7 @@
       },
       /* 跳转到商户登录页面*/
       topos_page(){
-        this.$router.push("logon3")
+        this.$router.push("registe1r")
       },
 
       /* 键盘上下选中*/

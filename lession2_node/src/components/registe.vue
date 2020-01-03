@@ -152,7 +152,7 @@
     },
     methods:{
       changeKeycode(event){
-        event.target.src="http://127.0.0.1:8090/backstage190820/defaultKaptcha";
+        event.target.src="http://127.0.0.1:8090/Goods_shop1/defaultKaptcha";
       },
       doRegiste(){
         var ob=this;
@@ -180,7 +180,7 @@
        }
 
 
-        var url="http://127.0.0.1:8090/backstage190820/doregiste";
+        var url="http://127.0.0.1:8090/Goods_shop1/userinfo/doinsert";
         $.ajax(url,{
           data:{
             logname:ob.logname,
@@ -191,7 +191,7 @@
              ob.msg=ob.msgtext[result.msg];
              ob.showmsg=true;
              if(result.msg!=1){
-               $("#sys_keycode")[0].src="http://127.0.0.1:8090/backstage190820/defaultKaptcha";
+               $("#sys_keycode")[0].src="http://127.0.0.1:8090/Goods_shop1/defaultKaptcha";
              }
           }
           ,

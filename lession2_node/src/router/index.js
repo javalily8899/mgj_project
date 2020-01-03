@@ -9,6 +9,7 @@ import logon from '@/components/logon'
 import shopcar from '@/components/shopcar'
 import orderpage from '@/components/orderpage'
 import logon3 from '@/components/logon3'
+import registe1r from '@/components/registe1r'
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +53,11 @@ export default new Router({
       path: '/logon3',
       name: 'logon3',
       component: logon3
+    },
+    {
+      path: '/registe1r',
+      name: 'registe1r',
+      component: registe1r
     }
 
 

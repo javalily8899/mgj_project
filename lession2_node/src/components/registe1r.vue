@@ -163,11 +163,11 @@
 
       changeKeycode(event){
 
-        event.target.src="#";
+        event.target.src="http://127.0.0.1:8090/Goods_shop1/defaultKaptcha";
 
       },
       doLogon(){
-        this.$router.push("/logon");
+        this.$router.push("/logon3");
       },
       doRegiste(){
         var ob=this;
@@ -193,7 +193,7 @@
        }
 
 
-        var url="#";
+         var url = "http://127.0.0.1:8090/Goods_shop1/poslogin"
           $.ajax(url,{
             data:{
               logname:ob.logname,
@@ -210,7 +210,7 @@
                 ob.msg=ob.msgtext[result.msg];
                 ob.showmsg=true;
                 if(result.msg!=1){
-                  $("#sys_keycode")[0].src="#";
+                  $("#sys_keycode")[0].src="http://127.0.0.1:8090/Goods_shop1/defaultKaptcha";
                 }
               }
 

@@ -64,7 +64,7 @@
                   class="form-control pull-left"  placeholder="验证码"
                    style="width:40%;margin-right: 20px;">
 
-                   <img @click="changeKeycode($event)" id="sys_keycode" class="pull-left" src="#" />
+                   <img @click="changeKeycode($event)" id="sys_keycode" class="pull-left" src="http://127.0.0.1:8090/backstage190820/defaultKaptcha" />
 
                </td>
 
@@ -161,7 +161,7 @@
 
       changeKeycode(event){
 
-        event.target.src="#";
+        event.target.src="http://127.0.0.1:8090/Goods_shop1/defaultKaptcha";
 
       },
       doRegiste(){
@@ -195,7 +195,7 @@
        }
 
 
-        var url="#";
+        var url="http://127.0.0.1:8090/Goods_shop1/doinsertpos";
         $.ajax(url,{
           data:{
             logname:ob.logname,
@@ -208,7 +208,7 @@
              ob.msg=ob.msgtext[result.msg];
              ob.showmsg=true;
              if(result.msg!=1){
-               $("#sys_keycode")[0].src="#";
+               $("#sys_keycode")[0].src="http://127.0.0.1:8090/Goods_shop1/defaultKaptcha";
              }
           }
           ,
