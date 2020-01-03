@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: Goods_shop1
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: lenovo
+Built-By: Administrator
 Implementation-Vendor-Id: com.lily.shop
 Build-Jdk: 1.8.0_181
 Implementation-URL: http://maven.apache.org

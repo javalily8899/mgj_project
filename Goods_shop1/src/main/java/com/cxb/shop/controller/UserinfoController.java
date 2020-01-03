@@ -48,7 +48,7 @@ public class UserinfoController {
 	}
 	
 	/**
-	 * 
+	 * 登录方法
 	 * @param logname
 	 * @param password
 	 * @param keycode

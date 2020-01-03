@@ -59,7 +59,7 @@ public class PosService {
 	}
 	
 	
-	
+//	注册
 	@Transactional
 	public void doPosRegiste(String logname,String password) throws UsernameExist{
 		

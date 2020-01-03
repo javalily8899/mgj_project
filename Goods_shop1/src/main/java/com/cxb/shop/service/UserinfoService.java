@@ -20,6 +20,7 @@ public class UserinfoService {
 
 	@Autowired
 	UserMapper userMapper;
+//	注册
 	@Transactional
 	public void getinster(String logname,String password) throws UsernameExist{
 //		判断用户名是否已存在
@@ -39,7 +40,7 @@ public class UserinfoService {
 		 user.setUtid(1);
 		 userMapper.insert(user);	 
 	}
-	
+//	登录
 	public User getselect(String logname,String password) throws UsernameExist, YanZhengmaException, PasswordEarroException{
 		UserExample example =new UserExample();
 		example.createCriteria().andLognameEqualTo(logname);
