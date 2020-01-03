@@ -170,7 +170,17 @@
             ob.showlog=true;
           }
         }
-
+      });
+      $.ajax("http://127.0.0.1:8090/Goods_shop1/posonline",{
+        xhrFields:{
+          withCredentials:true
+        },
+        success:function(result){
+          if(result.logname!=undefined){
+            ob.user=result;
+            ob.showlog=true;
+          }
+        }
       });
       $(window).scroll(function() {
         if ($(window).scrollTop()>500) {

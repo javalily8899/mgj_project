@@ -64,7 +64,7 @@
                   class="form-control pull-left"  placeholder="验证码"
                    style="width:40%;margin-right: 20px;">
 
-                   <img @click="changeKeycode($event)" id="sys_keycode" class="pull-left" src="http://127.0.0.1:8090/backstage190820/defaultKaptcha" />
+                   <img @click="changeKeycode($event)" id="sys_keycode" class="pull-left" src="http://127.0.0.1:8090/Goods_shop1/defaultKaptcha" />
 
                </td>
 
