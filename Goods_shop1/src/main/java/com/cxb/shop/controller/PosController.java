@@ -23,6 +23,11 @@ public class PosController {
 	@Autowired
 	PosService posService;
 	
+	@RequestMapping("/posselect")
+	public Object selectPosController(Integer poaid) {
+		return posService.selectAllpos(poaid);
+		
+	}
 	
 	@RequestMapping("/posonline")
 	public Object userIsOnline(HttpSession session){

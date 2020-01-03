@@ -1,6 +1,7 @@
 package com.cxb.shop.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -14,13 +15,30 @@ import com.cxb.shop.exception.UserBeDisabledException;
 import com.cxb.shop.exception.YanZhengmaException;
 import com.cxb.shop.exception.UserrNameErroException;
 import com.cxb.shop.mapper.PosMapper;
+import com.cxb.shop.mapper.PosToolMapper;
 import com.cxb.shop.pojo.Pos;
 import com.cxb.shop.pojo.PosExample;
 
 @Service
 public class PosService {
+	
+	
 	@Autowired
 	PosMapper posMapper;
+	
+	@Autowired
+	PosToolMapper posToolMapper;
+	
+	/**
+	 * 获取店铺所有的商品
+	 * @return poaid 店铺编号
+	 */
+	public List<Map> selectAllpos(Integer poaid) {
+		return posToolMapper.getAllpos(poaid);	
+	}
+	
+	
+	
 	/**
 	 * 用户登录的方法
 	 * @param logname  用户名
