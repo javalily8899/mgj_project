@@ -118,7 +118,7 @@
       <div style="width: 240px; height: 80px; float: left;">
         <div v-for="p in logop" :style="p.xiaoxi" class="table_logo"></div>
         <div class="table_logo">
-          <i class="fa fa-star-o" style="font-size: 31px;"></i>
+          <i class="fa fa-star-o" style="font-size: 31px;" @click="tocollect()"></i>
         </div>
         <div @click="toshopcar_page()" v-for="p in logop" :style="p.shopcar" class="table_logo"></div>
         <div v-for="p in logop" :style="p.erweima" class="table_logo"></div>
@@ -201,12 +201,22 @@
 
     },
     methods: {
+      /* 到购物车页面*/
       toshopcar_page(){
         if(this.user.logname==undefined){
           this.$router.push("logon");
           return;
         }else{
           this.$router.push({name:"shopcar"});
+        }
+      },
+      /* 跳转到收藏页面*/
+      tocollect(){
+        if(this.user.logname==undefined){
+          this.$router.push("logon");
+          return;
+        }else{
+          this.$router.push("collect");
         }
 
       },

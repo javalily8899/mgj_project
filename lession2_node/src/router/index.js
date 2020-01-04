@@ -10,6 +10,7 @@ import shopcar from '@/components/shopcar'
 import orderpage from '@/components/orderpage'
 import logon3 from '@/components/logon3'
 import registe1r from '@/components/registe1r'
+import collect from '@/components/collect'
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +59,11 @@ export default new Router({
       path: '/registe1r',
       name: 'registe1r',
       component: registe1r
+    },
+    {
+      path: '/collect',
+      name: 'collect',
+      component: collect
     }
 
 

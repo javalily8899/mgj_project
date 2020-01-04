@@ -86,6 +86,9 @@
     line-height: 60px;
     opacity: 0.6;
   }
+  .goods_collect{
+    background-color: yellow;
+  }
 </style>
 <template>
   <div style="margin-top: 40px;">
@@ -94,7 +97,7 @@
       <div @click="jump_getailpage(g.gdid)" v-for="(g,i) in goodsinfoes" class="dv_goods box" :class="{'spe':((i%3==0)||(i%7==0))}"
         :style="g.gimgurl">
         <div class="goods_detail">
-          <button>
+          <button :class="{'goods_collect':g.gdid==gdid}">
             <i class="fa fa-star-o"></i>
           </button>
           <br /> <br /> <br /> <br />
@@ -123,7 +126,8 @@
       return {
         goodsinfoes: [],
         pagenum: 1,
-        locked: false
+        locked: false,
+        gdid:1
       }
     },
     mounted() {
@@ -145,6 +149,43 @@
       });
     },
     methods: {
+      userlogname_yn(){
+        var ob=this;
+       var url="http://127.0.0.1:8090/Goods_shop1/userinfo/useronline"
+        $.ajax(url,{
+          async:false,
+          success:function (result) {
+            if(result.logname!=undefined){
+              ob.useronline=true;
+            }
+          },
+          xhrFields:{
+            withCredentials:true
+          }
+        })
+      },
+      /* 点击收藏商品*/
+      collectgoods(){
+        this.userlogname_yn();
+        if(!this.useronline){
+          this.$router.push({name:"logon"})
+          return;
+        }
+        var ob=this;
+        var url="http://127.0.0.1:8090/Goods_shop1/collect/doinsert"
+          $.ajax(url,{
+            data:{
+              gdid:ob.gdid,
+              gsid:ob.gsid
+            },
+             success:function (result) {
+               alert("收藏成功")
+             },
+             xhrFields:{
+               withCredentials:true
+             }
+          })
+      },
       // 点击主图到详情页
       jump_getailpage(gdid) {
         this.$router.push({

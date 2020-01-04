@@ -241,13 +241,13 @@ export default{
 
       })
     },
+    /* 添加到购物车*/
     toshopcar_page(){
       this.userlogname_yn();
       if(!this.useronline){
         this.$router.push({name:"logon"})
         return;
       }
-
       var ob=this;
       var url="http://127.0.0.1:8090/Goods_shop1/shopcar/doinsert"
         $.ajax(url,{
@@ -256,23 +256,16 @@ export default{
             gdcount:ob.goods_count,
             gsid:ob.gsid
           },
-
            success:function (result) {
-
            },
            xhrFields:{
              withCredentials:true
            }
-
         })
        ob.showshop=true;
        window.setTimeout(function(){
           ob.showshop=false;
        },1000)
-
-
-
-
 
     },
 
@@ -282,6 +275,7 @@ export default{
         this.goods_count=1;
       }
     },
+    /* 获取图片*/
     getpicture(){
       var ob=this;
       var url="http://127.0.0.1:8090/Goods_shop1/goodsinfo/getGoodsbygdid"
