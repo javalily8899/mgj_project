@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cxb.shop.mapper.PosToolMapper">
+ 
+ 	<select id="getAllpos" resultType="map"> 		
+		SELECT gimage.gimgurl FROM storeinfo st
+		JOIN goodsinfo gdinfo ON gdinfo.stid=st.stid
+		JOIN goodsimage gimage ON gimage.gdid=gdinfo.gdid
+		JOIN pos ON pos.poaid=st.stid
+		WHERE pos.poaid=#{poaid};
+ 	</select>
+ 	
+</mapper>
