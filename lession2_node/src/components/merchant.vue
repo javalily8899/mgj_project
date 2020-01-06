@@ -73,10 +73,8 @@
 
 <template>
   <div class="container">
-     <goodsbrowse></goodsbrowse>
-     <br /><br />
-     <goodstable2></goodstable2>
-
+    <goodsbrowse></goodsbrowse>
+    <goodstable2></goodstable2>
     <div class="dv_header">
       <div class="dv_personal">
         <!-- 商家头像 -->
@@ -127,8 +125,8 @@
         locked:false */
       }
     },
-    mounted(){
-      this.getInfoes();
+/*    mounted(){
+     
       var ob=this;
       $(window).scroll(function(){
           //页面滚动距离
@@ -144,7 +142,7 @@
           }
 
       });
-    },
+    }, */
     methods:{
       doupdate(){
         this.$router.push();
