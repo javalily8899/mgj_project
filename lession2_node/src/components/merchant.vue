@@ -43,30 +43,6 @@
 
   }
 
-
-
-
-  .dv_search{
-    margin-top: 25px;
-    width: 1000px;
-    height: 50px;
-  }
-  .dv_search input{
-      float: left;
-      margin-left: 400px;
-      width: 492px;
-      height: 45px;
-      background-color: transparent;
-      border-radius: 6px 0px 0px 6px;
-  }
-  .dv_search button{
-      width: 58px;
-      height: 100%;
-      background-color: #8D8D8D;
-      border: 0px;
-      border-radius: 0px 9px 9px 0px;
-   }
-
    .goods_detail{
    	width: 100%;height: 100%;position: absolute;
 
@@ -89,23 +65,6 @@
       margin-right: 10px;
       background-color: orange;
     }
-   /* .box:hover .goods_detail{
-     opacity: 1;
-
-   } */
-
-   /* .goods_detail button{
-
-   	background-color: #FFFFFF;
-   	color:gray;
-   	width: 40px;
-   	height: 40px;
-   	border-radius: 90px;
-   	border:0px;
-   	font-size: 23px;
-
-   	float: right;
-   	margin-right: 20px; */
 
 
 
@@ -114,14 +73,9 @@
 
 <template>
   <div class="container">
-    <div class="dv_search">
-      <input type="text" v-model="keyword">
-      <button>
-        <i class="fa fa-search " style="color:#ffffff;font-size: 19px;"></i>
-      </button>
-
-    </div>
-
+     <goodsbrowse></goodsbrowse>
+     <br /><br />
+     <goodstable2></goodstable2>
 
     <div class="dv_header">
       <div class="dv_personal">
@@ -148,7 +102,7 @@
 
 
     <div class="box-wrappe">
-      <div v-for="i in 5" class="dv_goods" :style="i" >
+      <div v-for="i in 20" class="dv_goods" :style="i" >
           <div class="goods_detail">
 
           </div>
@@ -167,7 +121,7 @@
         locked:false */
       }
     },
-    /* mounted(){
+    mounted(){
       this.getInfoes();
       var ob=this;
       $(window).scroll(function(){
@@ -184,7 +138,7 @@
           }
 
       });
-    }, */
+    },
     methods:{
       doupdate(){
         this.$router.push();

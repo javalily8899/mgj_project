@@ -11,6 +11,7 @@ import orderpage from '@/components/orderpage'
 import logon3 from '@/components/logon3'
 import registe1r from '@/components/registe1r'
 import collect from '@/components/collect'
+import merchant from '@/components/merchant'
 Vue.use(Router)
 
 export default new Router({
@@ -21,7 +22,7 @@ export default new Router({
       component: main
     },
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: home
     },
@@ -64,7 +65,12 @@ export default new Router({
       path: '/collect',
       name: 'collect',
       component: collect
-    }
+    },
+	{
+	  path: '/',
+	  name: 'merchant',
+	  component: merchant
+	},
 
 
 
