@@ -22,7 +22,7 @@ export default new Router({
       component: main
     },
     {
-      path: '/home',
+      path: '/',
       name: 'home',
       component: home
     },
@@ -67,7 +67,7 @@ export default new Router({
       component: collect
     },
 	{
-	  path: '/',
+	  path: '/merchant',
 	  name: 'merchant',
 	  component: merchant
 	},

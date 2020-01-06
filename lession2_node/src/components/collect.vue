@@ -12,7 +12,6 @@
     width: 800px;
     height: 300px;
     float: left;
-    margin-top: 40px;
   }
   .goodsshow th{
     text-align: center;
@@ -28,6 +27,12 @@
     float: left;
     margin-left: 10px;
   }
+  .my_collect{
+    width: 200px; height: 50px; font-size: 30px;
+    float: left;
+    margin-top: 36px;
+    color: orchid;
+  }
 </style>
 
 <template>
@@ -36,6 +41,7 @@
     <goodstable2></goodstable2>
     <div class="page_2">
       <beatgoods></beatgoods>
+      <div class="my_collect">我的收藏</div>
       <div class="goodsshow">
         <table class="table" style="line-height: 80px; text-align: center;">
           <tr>
@@ -48,7 +54,7 @@
             <th>删除</th>
           </tr>
           <tr v-for="(a,index) in shopcolls" style="line-height: 80px;">
-            <td>{{a.ctid}}</td>
+            <td>{{a.clid}}</td>
             <td>
               <div class="shop_gimg" :style="a.gimgurl"></div>
             </td>
