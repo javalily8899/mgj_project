@@ -89,6 +89,12 @@
   .goods_collect{
     background-color: yellow;
   }
+  .tocollect{
+    width: 60px;
+    height: 20px;
+
+    float: right;
+  }
 </style>
 <template>
   <div style="margin-top: 40px;">
@@ -97,15 +103,19 @@
       <div @click="jump_getailpage(g.gdid)" v-for="(g,i) in goodsinfoes" class="dv_goods box" :class="{'spe':((i%3==0)||(i%7==0))}"
         :style="g.gimgurl">
         <div class="goods_detail">
-          <button :class="{'goods_collect':g.gdid==gdid}">
+          <div class="tocollect" v-if="showcollect">
+            <span style="color: orange;">收藏成功</span>
+          </div>
+          <br />
+          <button :class="{'goods_collect':g.gdid==gdid}" @click="collectgoods()">
             <i class="fa fa-star-o"></i>
           </button>
-          <br /> <br /> <br /> <br />
+          <br /> <br /><br />
 
           <button>
             <i class="fa fa-thumbs-o-up"></i>
           </button>
-          <br /><br /> <br /> <br /> <br />
+          <br /><br /> <br />
           <div style="text-align: center;">
             <hr />
             {{g.gdname}}
@@ -127,7 +137,9 @@
         goodsinfoes: [],
         pagenum: 1,
         locked: false,
-        gdid:1
+        gdid:1,
+        useronline:false,
+        showcollect:false
       }
     },
     mounted() {
@@ -179,12 +191,16 @@
               gsid:ob.gsid
             },
              success:function (result) {
-               alert("收藏成功")
+               
              },
              xhrFields:{
                withCredentials:true
              }
           })
+          ob.showcollect=true;
+          window.setTimeout(function(){
+             ob.showcollect=false;
+          },1000)
       },
       // 点击主图到详情页
       jump_getailpage(gdid) {

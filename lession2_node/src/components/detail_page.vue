@@ -251,7 +251,7 @@ export default{
       var ob=this;
       var url="http://127.0.0.1:8090/Goods_shop1/shopcar/doinsert"
         $.ajax(url,{
-          data:{
+          data:{ 
             gdid:ob.goods.gdid,
             gdcount:ob.goods_count,
             gsid:ob.gsid
