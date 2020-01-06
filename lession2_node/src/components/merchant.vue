@@ -113,7 +113,13 @@
 </template>
 
 <script>
+  import goodsbrowse from '@/components/goodsbrowse.vue'
+  import goodstable2 from '@/components/goodstable2.vue'
   export default{
+    components:{
+      goodsbrowse,
+      goodstable2
+    },
     data () {
       return {
         goodsinfoes:[],

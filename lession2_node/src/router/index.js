@@ -32,7 +32,7 @@ export default new Router({
       component: detail_page
     },
     {
-      path: '/orderpage',
+      path: '/',
       name: 'orderpage',
       component: orderpage
     },
@@ -67,7 +67,7 @@ export default new Router({
       component: collect
     },
 	{
-	  path: '/',
+	  path: '/merchant',
 	  name: 'merchant',
 	  component: merchant
 	},
