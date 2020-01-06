@@ -73,8 +73,8 @@
 
 <template>
   <div class="container">
-    <goodsbrowse></goodsbrowse>
-    <goodstable2></goodstable2>
+    <merchantbrowse></merchantbrowse>
+    <merchanttable></merchanttable>
     <div class="dv_header">
       <div class="dv_personal">
         <!-- 商家头像 -->
@@ -111,12 +111,12 @@
 </template>
 
 <script>
-  import goodsbrowse from '@/components/goodsbrowse.vue'
-  import goodstable2 from '@/components/goodstable2.vue'
+  import merchantbrowse from '@/components/merchantbrowse.vue'
+  import merchanttable from '@/components/merchanttable.vue'
   export default{
-    components:{
-      goodsbrowse,
-      goodstable2
+   components:{
+      merchantbrowse,
+      merchanttable
     },
     data () {
       return {
@@ -126,7 +126,7 @@
       }
     },
 /*    mounted(){
-     
+
       var ob=this;
       $(window).scroll(function(){
           //页面滚动距离
