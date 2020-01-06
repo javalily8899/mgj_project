@@ -22,7 +22,7 @@
   <div class="container" style="">
     <div style="height: 80px;background-color: #FFFFFF;"></div>
 
-    <div style="height: 500px;background-image: url(../../static/imgs/rg.png);background-position: -500px -100px;  ">
+    <div style="height: 500px;background-image: url(../../static/di.png);background-position: -500px -100px;  ">
       <br/>      <br/>      <br/>
     <div class="dv_rgst pull-right" style="margin-right: 50px;" >
 
