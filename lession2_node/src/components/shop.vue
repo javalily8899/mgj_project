@@ -97,20 +97,30 @@
   .collect_page :hover{
     cursor: pointer;
   }
+  .collect_but{
+    width: 40px; height: 40px; background-color: yellow;
+    border-radius: 80px;
+    opacity: 0.6;
+    float: right;
+    margin-right: -40px;
+  }
 </style>
 <template>
   <div style="margin-top: 40px;">
     <div class="box-wrapper">
-      <div  @click="jump_getailpage(g.gdid)" v-for="(g,i) in goodsinfoes" class="dv_goods box" :class="{'spe':((i%3==0)||(i%7==0))}"
+     <!-- @click="jump_getailpage(g.gdid)" -->
+      <div   v-for="(g,i) in goodsinfoes" class="dv_goods box" :class="{'spe':((i%3==0)||(i%7==0))}"
         :style="g.gimgurl">
         <div class="goods_detail">
           <div class="tocollect" v-if="showcollect">
             <span style="color: orange;">收藏成功</span>
           </div>
           <br />
+          <!-- 收藏按钮-->
           <button class="collect_page"  @click="collectgoods(g.gdid)">
             <i class="fa fa-star-o"></i>
           </button>
+          <div class="collect_but" v-if="collectcg"></div>
           <br /> <br /><br />
 
           <button>
@@ -197,18 +207,35 @@
               gsid:ob.gsid
             },
              success:function (result) {
-
+                 ob.collectcg=true;
              },
              xhrFields:{
                withCredentials:true
              }
           })
+
           ob.showcollect=true;
           window.setTimeout(function(){
              ob.showcollect=false;
           },1000)
-         
+      },
+      /* 收藏页面变颜色*/
+      select_showcolor(){
+        var ob=this;
+        var url="http://127.0.0.1:8090/Goods_shop1/collect/showcolor"
+        $.ajax(url,{
+          data:{
+            gdid:ob.gdid,
+          },
+           success:function (result) {
 
+           },
+           xhrFields:{
+             withCredentials:true
+           },
+
+        })
+      $("collect_page").css({"background-color":"yellow"})
       },
       // 点击主图到详情页
       jump_getailpage(gdid) {
@@ -243,8 +270,6 @@
             ob.locked = false;
 
           },
-
-
         });
       }
 
