@@ -211,33 +211,36 @@
     }, */
     methods:{
       doupdate(){
-        this.$router.push();
+        this.$router.push({name:"serll"});
+      },
+      doinsert(){
+        this.$router.push({name:"insertgoods"});
+      },
+      sele_in(){
+        
+        var ob=this;
+        var url="#"
+        $ajax(url,{
+          /* data:{
+
+          }, */
+          success:function(result){
+            alert(resurl);
+
+            /* for(var i in goodslist){
+              goodslist[i].gimgurl="()";
+              ob.goodsinfoes.push(goodslist[i]);
+            } */
+
+            // ob.locked=false;
+
+          },
+
+
+        });
+
       }
     },
-    doinsert(){
-      this.$router.push();
-    },
-    doajax(){
-      var ob=this;
-      var url="#"
-      $ajax(url,{
-        /* data:{
-
-        }, */
-        success:function(result){
-          alert(resurl);
-
-          /* for(var i in goodslist){
-            goodslist[i].gimgurl="()";
-            ob.goodsinfoes.push(goodslist[i]);
-          } */
-
-          // ob.locked=false;
-
-        },
-
-
-      });
-    }
+    
   }
 </script>
