@@ -126,12 +126,15 @@
           &nbsp;&nbsp;&nbsp;&nbsp;消息 &nbsp; &nbsp; &nbsp; 收藏 &nbsp; &nbsp; &nbsp; 购物车&nbsp; &nbsp; 二维码
         </div>
       </div>
-      <div class="table_2_denglu" v-if="(!showlog)">
+      <div class="table_2_denglu" v-if="(!showlog)" >
         <button class="btn btn-success" @click="toenroll_page()">用户登录</button>
         <button class="btn btn-info" @click="topos_page()">商户登录</button>
       </div>
       <div v-if="showlog" class="hellopage">
         欢迎:{{user.logname}}
+      </div>
+      <div v-if="showcollect" class="hellopage">
+        <button class="btn btn-primary" @click="tocollect_page()">商铺主页</button>
       </div>
 
 
@@ -154,6 +157,7 @@
           "erweima": "background-image:url(http://127.0.0.1:8090/Goods_shop1/imgs/theme_p/d.png)",
         }],
         showlog:false,
+        showcollect:false,
         user:{}
       }
     },
@@ -179,6 +183,7 @@
           if(result.logname!=undefined){
             ob.user=result;
             ob.showlog=true;
+            ob.showcollect=true;
           }
         }
       });
@@ -201,6 +206,10 @@
 
     },
     methods: {
+      /* 跳转到商铺主页*/
+      tocollect_page(){
+        this.$router.push({name:"merchant"})
+      },
       /* 到购物车页面*/
       toshopcar_page(){
         if(this.user.logname==undefined){
