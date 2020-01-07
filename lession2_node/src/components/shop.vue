@@ -94,8 +94,8 @@
     height: 20px;
     float: right;
   }
-  .collect_page :hover{
-    cursor: pointer;
+  .collect_page .stop{
+
   }
   .collect_but{
     width: 40px; height: 40px; background-color: yellow;
@@ -109,7 +109,7 @@
   <div style="margin-top: 40px;">
     <div class="box-wrapper">
      <!-- @click="jump_getailpage(g.gdid)" -->
-      <div   v-for="(g,i) in goodsinfoes" class="dv_goods box" :class="{'spe':((i%3==0)||(i%7==0))}"
+      <div @click="jump_getailpage(g.gdid)"  v-for="(g,i) in goodsinfoes" class="dv_goods box" :class="{'spe':((i%3==0)||(i%7==0))}"
         :style="g.gimgurl">
         <div class="goods_detail">
           <div class="tocollect" v-if="showcollect">
@@ -175,7 +175,7 @@
       });
     },
     methods: {
-      userlogname_yn(){
+      userlogname_yn(event){
        var ob=this;
        var url="http://127.0.0.1:8090/Goods_shop1/userinfo/useronline"
         $.ajax(url,{
@@ -183,6 +183,7 @@
           success:function (result) {
             if(result.logname!=undefined){
               ob.useronline=true;
+              event.stopPropagation();
             }
           },
           xhrFields:{
@@ -213,7 +214,6 @@
                withCredentials:true
              }
           })
-
           ob.showcollect=true;
           window.setTimeout(function(){
              ob.showcollect=false;
