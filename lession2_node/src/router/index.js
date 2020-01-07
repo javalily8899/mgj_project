@@ -12,6 +12,8 @@ import logon3 from '@/components/logon3'
 import registe1r from '@/components/registe1r'
 import collect from '@/components/collect'
 import merchant from '@/components/merchant'
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -71,6 +73,7 @@ export default new Router({
 	  name: 'merchant',
 	  component: merchant
 	},
+  
 
 
 
