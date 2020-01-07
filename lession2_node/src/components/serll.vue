@@ -36,7 +36,9 @@
     <merchantbrowse></merchantbrowse>
     <br /><br />
     <div class="dv_sser">
-      <br /><br />
+      <br />
+      {{tian}}{{msgs}}
+      <br />
       <form>
         <tr>
           <td class="dv_ming">店铺名：</td>
@@ -56,8 +58,9 @@
             <input type="text" v-model="dianlian" placeholder="请输入商家联系方式"/>
           </td>
         </tr>
+
         <tr>
-          <button v-for="i in 1" @click="domerchant(i.dianlian,i.dianming,i.dilian)" style="background-color: greenyellow;">完成</button>
+          <button @click="domerchant(dianlian,dianming,dilian)" style="background-color: greenyellow;">完成</button>
         </tr>
       </form>
     </div>
@@ -77,19 +80,55 @@
       return{
         dianming:"",
         dianlian:"",
-        dilian:""
+        dilian:"",
+        tian:"",
+        msgs:""
       }
     },
     methods:{
-      domerchant(dianming,dianlian,dilian){
-        this.$router.push({
-          name:"merchant",
-          query:{
-            dianming:dianming,
-            dianlian:dianlian,
-            dilian:dilian
+
+      domerchant(){
+        var ob=this;
+
+        if(ob.dianming.length==0){
+          ob.msgs="商家名不能为空";
+          return;
+        }
+
+        if(ob.dilian.length==0){
+          ob.msgs="联系方式不能为空";
+          return;
+        }
+        if(ob.dianlian.length==0){
+          ob.msgs="联系地址不能为空";
+          return;
+        }
+
+
+
+
+        var url=""
+        $.ajax(url,{
+          data:{
+            dianming:this.dianming,
+            dianlian:this.dianlian,
+            dilian:this.dilian
+          },
+          success:function (result) {
+            if(true==result){
+              this.$router.push({
+                name:"merchant",
+                query:{
+                  dianming:dianming,
+                  dianlian:dianlian,
+                  dilian:dilian
+                }
+              });
+            }else{
+              this.tian="信息添加失败";
+            }
           }
-        })
+        });
       }
     }
   }
