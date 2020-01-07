@@ -12,8 +12,8 @@ import logon3 from '@/components/logon3'
 import registe1r from '@/components/registe1r'
 import collect from '@/components/collect'
 import merchant from '@/components/merchant'
-
-
+import insertgoods from '@/components/insertgoods'
+import serll from '@/components/serll'
 Vue.use(Router)
 
 export default new Router({
@@ -68,11 +68,21 @@ export default new Router({
       name: 'collect',
       component: collect
     },
-	{
-	  path: '/merchant',
-	  name: 'merchant',
-	  component: merchant
-	},
+    {
+      path: '/merchant',
+      name: 'merchant',
+      component: merchant
+    },
+    {
+      path: '/insertgoods',
+      name: 'insertgoods',
+      component: insertgoods
+    },
+    {
+      path: '/serll',
+      name: 'serll',
+      component: serll
+    }
   
 
 
