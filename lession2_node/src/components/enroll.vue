@@ -13,7 +13,7 @@
   .logo_table_logo{
     width: 130px;
     height: 100%;
-    background-image: url(../router/mg.png);
+    background-image: url(../../static/mg.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 0px,-20px;
@@ -24,7 +24,7 @@
     width: 100%;
     height:650px;
     float: left;
-    background-image: url(../router/di.png);
+    background-image: url(../../static/di.png);
     background-size: 100% 90%;
     background-repeat: no-repeat;
 
